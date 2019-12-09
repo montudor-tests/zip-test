@@ -13,4 +13,4 @@ jobs:
       uses: montudor/action-zip@v0.1.0
       with:
         args: zip -r output.zip .
-        workdir: /wow
+        working-directory: /wow
