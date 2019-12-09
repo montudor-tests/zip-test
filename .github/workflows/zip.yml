@@ -12,8 +12,4 @@ jobs:
     - name: Zip
       uses: montudor/action-zip@v0.1.0
       with:
-        args: zip -r output.zip .
-        working-directory: /wow
-    - run: |
-        ls .
-        ls /
+        args: sh -c cd wow && zip -r output.zip .
