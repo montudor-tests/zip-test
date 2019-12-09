@@ -14,3 +14,6 @@ jobs:
       with:
         args: zip -r output.zip .
         working-directory: /wow
+    - run: |
+        ls .
+        ls /
