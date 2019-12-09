@@ -12,7 +12,8 @@ jobs:
     - name: Zip
       uses: montudor/action-zip@v0.1.0
       with:
-        args: sh -v -m -c cd wow && zip -r /output.zip .
+        entrypoint: cd wow
+        args: zip -r /output.zip .
     - uses: actions/upload-artifact@v1
       with:
         name: output
