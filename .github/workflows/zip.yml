@@ -8,16 +8,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Zip
-      uses: montudor/action-zip@v0.1.0
-      with:
-        run: |
-          cd wow
-          zip -r ./output.zip .
-    - run: |
-        ls .
-    - uses: actions/upload-artifact@v1
-      with:
-        name: output.zip
-        path: .
+      - name: Determine current working dir
+        run: pwd
+      - uses: actions/checkout@v1
+      - name: Zip
+        uses: montudor/action-zip@v0.1.0
+        with:
+          run: cd wow && zip -r ./output.zip .
+      - run: |
+          ls .
+      - uses: actions/upload-artifact@v1
+        with:
+          name: output.zip
+          path: .
