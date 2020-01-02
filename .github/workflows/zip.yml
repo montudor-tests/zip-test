@@ -12,7 +12,9 @@ jobs:
     - name: Zip
       uses: montudor/action-zip@v0.1.0
       with:
-        args: sh -c cd wow && zip -r ./output.zip .
+        run: |
+          cd wow
+          zip -r ./output.zip .
     - run: |
         ls .
     - uses: actions/upload-artifact@v1
