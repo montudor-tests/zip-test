@@ -12,7 +12,7 @@ jobs:
         run: pwd
       - uses: actions/checkout@v1
       - name: Zip
-        uses: montudor/action-zip@9a14b79
+        uses: montudor-tests/action-zip@update/actions-config
         with:
           args: zip -r ./output.zip .
       - run: |
