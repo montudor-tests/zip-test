@@ -11,12 +11,12 @@ jobs:
       - name: Determine current working dir
         run: pwd
       - uses: actions/checkout@v1
+      - run: |
+          ls .
       - name: Zip
         uses: montudor-tests/action-zip@update/actions-config
         with:
-          args: zip -r ./output.zip .
-      - run: |
-          ls .
+          args: zip -r ./output.zip wow
       - uses: actions/upload-artifact@v1
         with:
           name: output.zip
