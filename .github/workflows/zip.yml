@@ -16,7 +16,7 @@ jobs:
       - name: Zip
         uses: montudor-tests/action-zip@update/actions-config
         with:
-          args: 'zip -r ./output.zip .'
+          args: zip -r ./output.zip .
       - uses: actions/upload-artifact@v1
         with:
           name: output.zip
