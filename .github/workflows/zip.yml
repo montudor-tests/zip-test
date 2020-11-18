@@ -14,10 +14,19 @@ jobs:
       - run: |
           ls .
       - name: Zip
-        uses: montudor-tests/action-zip@update/actions-config
+        uses: montudor/action-zip@master
         with:
           args: zip -r ./output.zip .
+      - name: Install Zip
+        uses: montudor/action-zip@master
+      - name: Run Zip
+        run: zip -r ./output2.zip .
+        working-directory: wow
       - uses: actions/upload-artifact@v1
         with:
           name: output.zip
+          path: .
+      - uses: actions/upload-artifact@v1
+        with:
+          name: output2.zip
           path: .
